@@ -170,6 +170,8 @@ public class MainController {
 
             //Start algo
             while (!processQueue.isEmpty() || !readyQueue.isEmpty()) {
+                String currQueue ="T" + currTime + ": ";
+
                 //Push process by arrival time into ready queue
                 while (!processQueue.isEmpty() && processQueue.peek().getArrivalTime() <= currTime) {
                     readyQueue.offer(processQueue.poll());
@@ -181,6 +183,9 @@ public class MainController {
 
                 if (!readyQueue.isEmpty()) {
                     Process currProcess = readyQueue.poll();
+                    //Logging
+                    currQueue = currQueue.concat(currProcess.getProcessName()+ "(" + currProcess.getRemainingBurst() + "), ");
+
                     if (currProcess.getRemainingBurst() <= quantumTime) {
                         currTime += currProcess.getRemainingBurst();
 
@@ -197,7 +202,7 @@ public class MainController {
                     resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
                     log = log.concat(currProcess.getProcessName() + "(" + currTime + "), ");
 
-                    String currQueue ="T" + currTime + ": ";
+
                     //Queue log
                     for (Process p : readyQueue) {
                         currQueue = currQueue.concat(p.getProcessName() + "(" + p.getRemainingBurst() + "), ");
