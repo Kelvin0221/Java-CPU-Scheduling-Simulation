@@ -1,7 +1,5 @@
 package com.example.assignment1;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -42,6 +40,8 @@ public class MainController {
     public ArrayList<Process> processList = new ArrayList<>();
     public ArrayList<ProcessGanttData> resultList = new ArrayList<>();
     public String log = "";
+
+    public ArrayList<String> queueLog = new ArrayList<>();
     public Button btnClear;
 
     @FXML
@@ -66,14 +66,6 @@ public class MainController {
         rBtn02.setToggleGroup(tgAlgo);
         rBtn03.setToggleGroup(tgAlgo);
         rBtn04.setToggleGroup(tgAlgo);
-
-        //Test data
-//        processList.add(new Process("P0", 6, 0, 3));
-//        processList.add(new Process("P1", 4, 1, 3));
-//        processList.add(new Process("P2", 6, 5, 1));
-//        processList.add(new Process("P3", 6, 6, 1));
-//        processList.add(new Process("P5", 6, 8, 6));
-//        processList.add(new Process("P4", 6, 7, 5));
     }
 
     public void btnAddProcess_clicked() {
@@ -153,10 +145,9 @@ public class MainController {
             alert.show();
         }
 
-//        for (Process p : processList) {
-//            System.out.println(p.getProcessName() + " AT: " + p.getArrivalTime() + " FT " + p.getFinishTime());
-//        }
-//        System.out.println(log);
+        for (String qLog: queueLog) {
+            System.out.println(qLog);
+        }
     }
 
     public void txtOnKey_pressed(KeyEvent keyEvent) {
@@ -167,7 +158,7 @@ public class MainController {
     }
 
     private void roundRobin() {
-        int quantumTime = 3;
+        int quantumTime = 2;
         int currTime = 0;
 
         PriorityQueue<Process> processQueue = new PriorityQueue<>();
@@ -205,6 +196,16 @@ public class MainController {
                     }
                     resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
                     log = log.concat(currProcess.getProcessName() + "(" + currTime + "), ");
+
+                    String currQueue ="T" + currTime + ": ";
+                    //Queue log
+                    for (Process p : readyQueue) {
+                        currQueue = currQueue.concat(p.getProcessName() + "(" + p.getRemainingBurst() + "), ");
+                    }
+
+                    currQueue = currQueue.substring(0, currQueue.length()-2);
+                    queueLog.add(currQueue);
+
                 }else{
                     currTime++;
                 }
