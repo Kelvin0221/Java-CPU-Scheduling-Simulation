@@ -1,10 +1,6 @@
 package com.example.assignment1;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-
-import java.util.Comparator;
 
 public class Process implements Comparable<Process>, Cloneable {
     private String processName;
@@ -14,6 +10,7 @@ public class Process implements Comparable<Process>, Cloneable {
     private int remainingBurst;
     private int processCount;
     private int finishTime;
+    private int initArrivalTime;
     private static int totalTime;
 
     private final Button btnDelete;
@@ -24,6 +21,7 @@ public class Process implements Comparable<Process>, Cloneable {
         this.priority = priority;
         remainingBurst = burstTime;
         finishTime=0;
+        initArrivalTime = arrivalTime;
         totalTime += burstTime;
         processCount = 0;
         btnDelete = new Button("Delete");
@@ -50,7 +48,9 @@ public class Process implements Comparable<Process>, Cloneable {
     }
 
     public int getArrivalTime() {
-        return arrivalTime;
+
+        if (arrivalTime == 0) return initArrivalTime;
+            else return arrivalTime;
     }
 
     public void setArrivalTime(int arrivalTime) {
@@ -98,7 +98,7 @@ public class Process implements Comparable<Process>, Cloneable {
     }
 
     public int getTurnAroundTime(){
-        return this.finishTime-this.arrivalTime;
+        return this.finishTime-getArrivalTime();
     }
 
     public  int getWaitingTime(){

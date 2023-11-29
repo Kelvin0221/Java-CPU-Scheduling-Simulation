@@ -17,6 +17,10 @@ public class ProcessGanttData {
         return processTime;
     }
 
+    public void setProcessTime(int processTime) {
+        this.processTime = processTime;
+    }
+
     @Override
     public String toString() {
         return "processName= " + processName + ", processTime= " + processTime;

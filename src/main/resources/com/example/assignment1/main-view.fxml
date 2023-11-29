@@ -29,17 +29,17 @@
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </VBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rBtn02" mnemonicParsing="false" text="Algo02">
+            <RadioButton fx:id="rBtn02" mnemonicParsing="false" text="Non preemptive Priority">
                 <VBox.margin>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </VBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rBtn03" mnemonicParsing="false" text="Algo03">
+            <RadioButton fx:id="rBtn03" mnemonicParsing="false" text="Preemptive Priority">
                 <VBox.margin>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </VBox.margin>
             </RadioButton>
-            <RadioButton fx:id="rBtn04" mnemonicParsing="false" text="Algo04">
+            <RadioButton fx:id="rBtn04" mnemonicParsing="false" text="Preemptive SJF">
                 <VBox.margin>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </VBox.margin>

@@ -15,6 +15,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.UnaryOperator;
 
@@ -66,6 +67,13 @@ public class MainController {
         rBtn02.setToggleGroup(tgAlgo);
         rBtn03.setToggleGroup(tgAlgo);
         rBtn04.setToggleGroup(tgAlgo);
+
+        processList.add(new Process("P0",6,0,3));
+        processList.add(new Process("P1",4,1,3));
+        processList.add(new Process("P2",6,5,1));
+        processList.add(new Process("P3",6,6,1));
+        processList.add(new Process("P4",6,7,5));
+        processList.add(new Process("P5",6,8,6));
     }
 
     public void btnAddProcess_clicked() {
@@ -124,8 +132,8 @@ public class MainController {
     }
 
     public void btnRun_clicked() {
-        resultList.clear();
-        processList.clear();
+        //resultList.clear();
+        //processList.clear();
 
         //Eliminate reference when repeat running
         for (Process p : tblProcess.getItems()){
@@ -134,9 +142,9 @@ public class MainController {
 
         if (processList.size() >= 3) {
             if (rBtn01.isSelected()) roundRobin();
-            else if (rBtn02.isSelected()) return;
-            else if (rBtn03.isSelected()) return;
-            else if (rBtn04.isSelected()) return;
+            else if (rBtn02.isSelected()) nonPreemptivePriority();
+            else if (rBtn03.isSelected()) preemptivePriority();
+            else if (rBtn04.isSelected()) preemptiveSJF();
 
             createGanttChart();
             createResultTable();
@@ -158,7 +166,7 @@ public class MainController {
     }
 
     private void roundRobin() {
-        int quantumTime = 2;
+        int quantumTime = 3;
         int currTime = 0;
 
         PriorityQueue<Process> processQueue = new PriorityQueue<>();
@@ -221,6 +229,196 @@ public class MainController {
         }
     }
 
+    private void nonPreemptivePriority() {
+        int currTime = 0;
+
+        PriorityQueue<Process> processQueue = new PriorityQueue<>();
+        processQueue.addAll(processList);
+
+        if (!processQueue.isEmpty()) {
+            PriorityQueue<Process> readyQueue = new PriorityQueue<>();
+
+            //Start algo
+            while (!processQueue.isEmpty() || !readyQueue.isEmpty()) {
+                //Push process by arrival time into ready queue
+                while (!processQueue.isEmpty() && processQueue.peek().getArrivalTime() <= currTime) {
+                    Process tempProcess = processQueue.poll();
+                    //Disable arrival time for sort by priority
+                    if(tempProcess != null) {
+                        tempProcess.setArrivalTime(0);
+                        readyQueue.offer(tempProcess);
+                    }
+                }
+
+                if(!readyQueue.isEmpty()){
+                    Process currProcess = readyQueue.poll();
+                    currTime += currProcess.getBurstTime();
+
+                    currProcess.setFinishTime(currTime);
+                    Process.setTotalTime(currTime);
+                    currProcess.setRemainingBurst(0);
+                    resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
+                }else{
+                    currTime ++;
+                }
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "No process available!", ButtonType.OK);
+            alert.show();
+        }
+    }
+
+    private void preemptivePriority() {
+        int currTime = 0;
+
+        PriorityQueue<Process> processQueue = new PriorityQueue<>();
+        processQueue.addAll(processList);
+
+        if (!processQueue.isEmpty()) {
+            PriorityQueue<Process> readyQueue = new PriorityQueue<>();
+            Process previousProcess = null;
+
+            //Start algo
+            while (!processQueue.isEmpty() || !readyQueue.isEmpty()) {
+                //Push process by arrival time into ready queue
+                while (!processQueue.isEmpty() && processQueue.peek().getArrivalTime() <= currTime) {
+                    Process tempProcess = processQueue.poll();
+                    //Disable arrival time for sort by priority
+                    if(tempProcess != null) {
+                        tempProcess.setArrivalTime(0);
+                        readyQueue.offer(tempProcess);
+                    }
+                }
+
+                currTime ++;
+
+                if(!readyQueue.isEmpty()) {
+                    Process currProcess = readyQueue.poll();
+
+                    if(previousProcess!= null && previousProcess.getPriority() == currProcess.getPriority()){
+                        readyQueue.offer(currProcess);
+                        currProcess=previousProcess;
+                        readyQueue.remove(previousProcess);
+                    }
+
+                    currProcess.setFinishTime(currTime);
+                    Process.setTotalTime(currTime);
+                    currProcess.setRemainingBurst(currProcess.getRemainingBurst() - 1);
+                    resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
+
+                    if(currProcess.getRemainingBurst() > 0){
+                        readyQueue.offer(currProcess);
+                        previousProcess = currProcess;
+                    }
+                    else previousProcess = null;
+                }
+            }
+            //Merge adjacent
+            if(!resultList.isEmpty()){
+                ArrayList<ProcessGanttData> newResultList = new ArrayList<>();
+                ProcessGanttData tempGC = null;
+                for(int i=0; i< resultList.size()-1; i++){
+                    if(tempGC == null){
+                        tempGC = resultList.get(i);
+                    }
+
+                    if(tempGC.getProcessName().equals(resultList.get(i + 1).getProcessName())){
+                        tempGC.setProcessTime(resultList.get(i + 1).getProcessTime());
+                    }else{
+                        newResultList.add(tempGC);
+                        tempGC = null;
+                    }
+                }
+                //Final add
+                if(tempGC != null){
+                    newResultList.add(tempGC);
+                }
+                resultList = newResultList;
+            }
+
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "No process available!", ButtonType.OK);
+            alert.show();
+        }
+    }
+
+    private void preemptiveSJF() {
+
+        //Switch remaining burst into Priority and keep on update
+        int currTime = 0;
+
+        PriorityQueue<Process> processQueue = new PriorityQueue<>();
+        processQueue.addAll(processList);
+
+        if (!processQueue.isEmpty()) {
+            PriorityQueue<Process> readyQueue = new PriorityQueue<>();
+            Process previousProcess = null;
+
+            //Start algo
+            while (!processQueue.isEmpty() || !readyQueue.isEmpty()) {
+                //Push process by arrival time into ready queue
+                while (!processQueue.isEmpty() && processQueue.peek().getArrivalTime() <= currTime) {
+                    Process tempProcess = processQueue.poll();
+                    //Disable arrival time for sort by priority
+                    if(tempProcess != null) {
+                        tempProcess.setArrivalTime(0);
+                        tempProcess.setPriority(tempProcess.getRemainingBurst());
+                        readyQueue.offer(tempProcess);
+                    }
+                }
+
+                currTime ++;
+
+                if(!readyQueue.isEmpty()) {
+                    Process currProcess = readyQueue.poll();
+
+                    if(previousProcess!= null && previousProcess.getPriority() == currProcess.getPriority()){
+                        readyQueue.offer(currProcess);
+                        currProcess=previousProcess;
+                        readyQueue.remove(previousProcess);
+                    }
+
+                    currProcess.setFinishTime(currTime);
+                    Process.setTotalTime(currTime);
+                    currProcess.setRemainingBurst(currProcess.getRemainingBurst() - 1);
+                    resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
+
+                    if(currProcess.getRemainingBurst() > 0){
+                        currProcess.setPriority(currProcess.getRemainingBurst());
+                        readyQueue.offer(currProcess);
+                        previousProcess = currProcess;
+                    }
+                    else previousProcess = null;
+                }
+            }
+            //Merge adjacent
+            if(!resultList.isEmpty()){
+                ArrayList<ProcessGanttData> newResultList = new ArrayList<>();
+                ProcessGanttData tempGC = null;
+                for(int i=0; i< resultList.size()-1; i++){
+                    if(tempGC == null){
+                        tempGC = resultList.get(i);
+                    }
+
+                    if(tempGC.getProcessName().equals(resultList.get(i + 1).getProcessName())){
+                        tempGC.setProcessTime(resultList.get(i + 1).getProcessTime());
+                    }else{
+                        newResultList.add(tempGC);
+                        tempGC = null;
+                    }
+                }
+                //Final add
+                if(tempGC != null){
+                    newResultList.add(tempGC);
+                }
+                resultList = newResultList;
+            }
+
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "No process available!", ButtonType.OK);
+            alert.show();
+        }
+    }
     private void createGanttChart(){
         pnGanttChart.getChildren().clear();
 
