@@ -68,12 +68,12 @@ public class MainController {
         rBtn03.setToggleGroup(tgAlgo);
         rBtn04.setToggleGroup(tgAlgo);
 
-        processList.add(new Process("P0",6,0,3));
-        processList.add(new Process("P1",4,1,3));
-        processList.add(new Process("P2",6,5,1));
-        processList.add(new Process("P3",6,6,1));
-        processList.add(new Process("P4",6,7,5));
-        processList.add(new Process("P5",6,8,6));
+//        processList.add(new Process("P0",6,0,3));
+//        processList.add(new Process("P1",4,1,3));
+//        processList.add(new Process("P2",6,5,1));
+//        processList.add(new Process("P3",6,6,1));
+//        processList.add(new Process("P4",6,7,5));
+//        processList.add(new Process("P5",6,8,6));
     }
 
     public void btnAddProcess_clicked() {
@@ -132,8 +132,8 @@ public class MainController {
     }
 
     public void btnRun_clicked() {
-        //resultList.clear();
-        //processList.clear();
+        resultList.clear();
+        processList.clear();
 
         //Eliminate reference when repeat running
         for (Process p : tblProcess.getItems()){
