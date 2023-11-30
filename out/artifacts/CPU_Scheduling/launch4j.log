@@ -1,0 +1,140 @@
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Zulu\zulu-17\
+Substitute:	PATH = ;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+JRE paths:	C:\Program Files\Zulu\zulu-17\;;C:\Program Files\Zulu\zulu-17\bin\;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\kelvi\AppData\Local\Programs\Python\Python311\;C:\Users\kelvi\AppData\Local\Microsoft\WindowsApps;D:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\kelvi\AppData\Local\GitHubDesktop\bin;C:\Program Files\CMake\bin;C:\Users\kelvi\AppData\Roaming\npm;C:\Users\kelvi\.dotnet\tools;C:\Program Files\Zulu\zulu-17\\bin
+Check launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe (OK)
+Version string: 1.017.000_005 / 64-Bit (OK)
+Launcher:	C:\Program Files\Zulu\zulu-17\bin\javaw.exe
+Launcher args:	-jar "D:\MMU CSSE\Sem5\OS\Assignemnt1\Assignment1\out\artifacts\CPU_Scheduling\CPUScheduling.exe"
+Args length:	97/32768 chars
+Exit code:	0

@@ -9,13 +9,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.UnaryOperator;
 
@@ -37,13 +34,14 @@ public class MainController {
     public RadioButton rBtn03;
     public RadioButton rBtn04;
     public Pane pnGanttChart;
-    public Pane pnResult;
+    public HBox pnResult;
     public ArrayList<Process> processList = new ArrayList<>();
     public ArrayList<ProcessGanttData> resultList = new ArrayList<>();
     public String log = "";
 
     public ArrayList<String> queueLog = new ArrayList<>();
     public Button btnClear;
+    public TextField txtTimeQuantum;
 
     @FXML
     protected void initialize() {
@@ -60,6 +58,7 @@ public class MainController {
         txtBurstTime.setTextFormatter(new TextFormatter<>(filter));
         txtArrivalTime.setTextFormatter(new TextFormatter<>(filter));
         txtPriority.setTextFormatter(new TextFormatter<>(filter));
+        txtTimeQuantum.setTextFormatter(new TextFormatter<>(filter));
 
         //Radio Button
         ToggleGroup tgAlgo = new ToggleGroup();
@@ -67,13 +66,6 @@ public class MainController {
         rBtn02.setToggleGroup(tgAlgo);
         rBtn03.setToggleGroup(tgAlgo);
         rBtn04.setToggleGroup(tgAlgo);
-
-//        processList.add(new Process("P0",6,0,3));
-//        processList.add(new Process("P1",4,1,3));
-//        processList.add(new Process("P2",6,5,1));
-//        processList.add(new Process("P3",6,6,1));
-//        processList.add(new Process("P4",6,7,5));
-//        processList.add(new Process("P5",6,8,6));
     }
 
     public void btnAddProcess_clicked() {
@@ -135,6 +127,9 @@ public class MainController {
         resultList.clear();
         processList.clear();
 
+        log = "";
+        queueLog.clear();
+
         //Eliminate reference when repeat running
         for (Process p : tblProcess.getItems()){
             processList.add(p.clone());
@@ -166,8 +161,11 @@ public class MainController {
     }
 
     private void roundRobin() {
-        int quantumTime = 3;
+        int quantumTime;
         int currTime = 0;
+
+        if(txtTimeQuantum.getText().equals("") || txtTimeQuantum.getText().equals("0")) quantumTime = 3;
+        else quantumTime = Integer.parseInt(txtTimeQuantum.getText());
 
         PriorityQueue<Process> processQueue = new PriorityQueue<>();
         processQueue.addAll(processList);
@@ -209,7 +207,6 @@ public class MainController {
                     }
                     resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
                     log = log.concat(currProcess.getProcessName() + "(" + currTime + "), ");
-
 
                     //Queue log
                     for (Process p : readyQueue) {
@@ -314,27 +311,7 @@ public class MainController {
                 }
             }
             //Merge adjacent
-            if(!resultList.isEmpty()){
-                ArrayList<ProcessGanttData> newResultList = new ArrayList<>();
-                ProcessGanttData tempGC = null;
-                for(int i=0; i< resultList.size()-1; i++){
-                    if(tempGC == null){
-                        tempGC = resultList.get(i);
-                    }
-
-                    if(tempGC.getProcessName().equals(resultList.get(i + 1).getProcessName())){
-                        tempGC.setProcessTime(resultList.get(i + 1).getProcessTime());
-                    }else{
-                        newResultList.add(tempGC);
-                        tempGC = null;
-                    }
-                }
-                //Final add
-                if(tempGC != null){
-                    newResultList.add(tempGC);
-                }
-                resultList = newResultList;
-            }
+            mergeAdjacentResult();
 
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "No process available!", ButtonType.OK);
@@ -351,18 +328,18 @@ public class MainController {
         processQueue.addAll(processList);
 
         if (!processQueue.isEmpty()) {
-            PriorityQueue<Process> readyQueue = new PriorityQueue<>();
+            PriorityQueue<Process> readyQueue = new PriorityQueue<>(new SJF());
             Process previousProcess = null;
 
             //Start algo
             while (!processQueue.isEmpty() || !readyQueue.isEmpty()) {
                 //Push process by arrival time into ready queue
-                while (!processQueue.isEmpty() && processQueue.peek().getArrivalTime() <= currTime) {
+                while (!processQueue.isEmpty() && processQueue.peek().getArrivalTime() == currTime) {
                     Process tempProcess = processQueue.poll();
                     //Disable arrival time for sort by priority
                     if(tempProcess != null) {
+                        tempProcess.setProcessCount(tempProcess.getArrivalTime());
                         tempProcess.setArrivalTime(0);
-                        tempProcess.setPriority(tempProcess.getRemainingBurst());
                         readyQueue.offer(tempProcess);
                     }
                 }
@@ -372,7 +349,7 @@ public class MainController {
                 if(!readyQueue.isEmpty()) {
                     Process currProcess = readyQueue.poll();
 
-                    if(previousProcess!= null && previousProcess.getPriority() == currProcess.getPriority()){
+                    if(previousProcess!= null && previousProcess.getRemainingBurst() == currProcess.getRemainingBurst()){
                         readyQueue.offer(currProcess);
                         currProcess=previousProcess;
                         readyQueue.remove(previousProcess);
@@ -384,7 +361,6 @@ public class MainController {
                     resultList.add(new ProcessGanttData(currProcess.getProcessName(), currTime));
 
                     if(currProcess.getRemainingBurst() > 0){
-                        currProcess.setPriority(currProcess.getRemainingBurst());
                         readyQueue.offer(currProcess);
                         previousProcess = currProcess;
                     }
@@ -392,65 +368,72 @@ public class MainController {
                 }
             }
             //Merge adjacent
-            if(!resultList.isEmpty()){
-                ArrayList<ProcessGanttData> newResultList = new ArrayList<>();
-                ProcessGanttData tempGC = null;
-                for(int i=0; i< resultList.size()-1; i++){
-                    if(tempGC == null){
-                        tempGC = resultList.get(i);
-                    }
-
-                    if(tempGC.getProcessName().equals(resultList.get(i + 1).getProcessName())){
-                        tempGC.setProcessTime(resultList.get(i + 1).getProcessTime());
-                    }else{
-                        newResultList.add(tempGC);
-                        tempGC = null;
-                    }
-                }
-                //Final add
-                if(tempGC != null){
-                    newResultList.add(tempGC);
-                }
-                resultList = newResultList;
-            }
+            mergeAdjacentResult();
 
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR, "No process available!", ButtonType.OK);
             alert.show();
         }
     }
+
+    private void mergeAdjacentResult(){
+        if(!resultList.isEmpty()){
+            ArrayList<ProcessGanttData> newResultList = new ArrayList<>();
+            ProcessGanttData tempGC = null;
+            for(int i=0; i< resultList.size()-1; i++){
+                if(tempGC == null){
+                    tempGC = resultList.get(i);
+                }
+
+                if(tempGC.getProcessName().equals(resultList.get(i + 1).getProcessName())){
+                    tempGC.setProcessTime(resultList.get(i + 1).getProcessTime());
+                }else{
+                    newResultList.add(tempGC);
+                    tempGC = null;
+                }
+            }
+            //Final add
+            if(tempGC != null){
+                newResultList.add(tempGC);
+            }
+            resultList = newResultList;
+        }
+    }
     private void createGanttChart(){
         pnGanttChart.getChildren().clear();
 
-        int minWidth = 850;
+        double minWidth = 850;
 
-        Rectangle rectangle = new Rectangle(minWidth,30);
-        rectangle.setFill(Color.WHITE);
-        rectangle.setStroke(Color.BLACK);
+        if(Process.getTotalTime() > 50){
+            minWidth += (Process.getTotalTime()-50) * 50;
+        }
 
         StackPane spProcess = new StackPane();
-        spProcess.setMinWidth(minWidth);
+        spProcess.setPrefWidth(minWidth);
 
         StackPane spTime = new StackPane();
-        spTime.setMinWidth(minWidth);
+        spTime.setPrefWidth(minWidth);
 
         HBox processData = new HBox();
-        processData.setMaxWidth(minWidth);
+        processData.setPrefWidth(Double.MAX_VALUE);
         processData.setAlignment(Pos.TOP_CENTER);
 
         HBox timeData = new HBox();
-        timeData.setMaxWidth(minWidth);
+        timeData.setPrefWidth(Double.MAX_VALUE);
 
         timeData.getChildren().add(setLine("0", 0));
         int widthStack = 0;
 
         for (ProcessGanttData g: resultList) {
             Label lblProcess = new Label(g.getProcessName());
+            lblProcess.setStyle("-fx-border-color: black;-fx-border-style: solid hidden solid hidden;");
 
-            double widthLabel = (((double) minWidth/Process.getTotalTime())*(g.getProcessTime()-widthStack));
+
+            double widthLabel = (minWidth / Process.getTotalTime()) * (g.getProcessTime() - widthStack);
 
             lblProcess.setMinWidth(widthLabel);
-            lblProcess.setPadding(new Insets(10,0,10,0));
+            lblProcess.setMaxWidth(widthLabel);
+            lblProcess.setPadding(new Insets(5,0,5,0));
             lblProcess.setWrapText(true);
 
             lblProcess.setAlignment(Pos.BASELINE_CENTER);
@@ -462,7 +445,8 @@ public class MainController {
 
         spProcess.getChildren().add(processData);
         spTime.getChildren().add(timeData);
-        pnGanttChart.getChildren().addAll(rectangle, spProcess, spTime);
+
+        pnGanttChart.getChildren().addAll(spProcess, spTime);
     }
 
     private void createResultTable(){

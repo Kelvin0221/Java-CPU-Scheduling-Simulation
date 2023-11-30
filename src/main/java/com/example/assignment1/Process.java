@@ -2,6 +2,8 @@ package com.example.assignment1;
 
 import javafx.scene.control.Button;
 
+import java.util.Comparator;
+
 public class Process implements Comparable<Process>, Cloneable {
     private String processName;
     private int burstTime;
@@ -10,7 +12,7 @@ public class Process implements Comparable<Process>, Cloneable {
     private int remainingBurst;
     private int processCount;
     private int finishTime;
-    private int initArrivalTime;
+    private final int initArrivalTime;
     private static int totalTime;
 
     private final Button btnDelete;
@@ -121,5 +123,13 @@ public class Process implements Comparable<Process>, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
+    }
+}
+
+class SJF implements Comparator<Process> {
+    @Override
+    public int compare(Process p1, Process p2) {
+        if(p1.getRemainingBurst() != p2.getRemainingBurst()) return p1.getRemainingBurst()-p2.getRemainingBurst();
+        else return p1.getArrivalTime() - p2.getArrivalTime();
     }
 }

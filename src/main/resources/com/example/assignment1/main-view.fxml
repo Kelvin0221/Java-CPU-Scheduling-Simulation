@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #808080;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment1.MainController">
-    <Pane layoutX="14.0" layoutY="14.0" prefHeight="243.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
+    <Pane layoutX="14.0" layoutY="14.0" prefHeight="243.0" prefWidth="454.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
         <TableView fx:id="tblProcess" editable="true" layoutX="14.0" layoutY="31.0" prefHeight="200.0" prefWidth="428.0">
             <columns>
                 <TableColumn fx:id="tbcProcess" prefWidth="75.0" sortable="false" text="Process" />
@@ -21,10 +21,10 @@
         <Label layoutX="14.0" layoutY="6.0" text="Process List:" />
       <Button fx:id="btnClear" layoutX="399.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnClear_clicked" text="Clear" />
     </Pane>
-    <Pane layoutX="477.0" layoutY="14.0" prefHeight="243.0" prefWidth="184.0" style="-fx-background-color: #ffffff;">
+    <Pane layoutX="477.0" layoutY="14.0" prefHeight="243.0" prefWidth="184.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="477.0" AnchorPane.topAnchor="14.0">
         <Label layoutX="8.0" layoutY="14.0" text="CPU Scheduling Algorithm:" />
-        <VBox layoutX="8.0" layoutY="31.0" prefHeight="194.0" prefWidth="168.0">
-            <RadioButton fx:id="rBtn01" mnemonicParsing="false" selected="true" text="Round Robin Quantum: 3">
+        <VBox layoutX="8.0" layoutY="31.0" prefHeight="153.0" prefWidth="168.0">
+            <RadioButton fx:id="rBtn01" mnemonicParsing="false" selected="true" text="Round Robin">
                 <VBox.margin>
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </VBox.margin>
@@ -44,9 +44,22 @@
                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </VBox.margin>
             </RadioButton>
+         <GridPane>
+           <columnConstraints>
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label text="Time Quantum:" />
+               <TextField fx:id="txtTimeQuantum" text="3" GridPane.columnIndex="1" />
+            </children>
+         </GridPane>
         </VBox>
     </Pane>
-    <Pane layoutX="671.0" layoutY="14.0" prefHeight="243.0" prefWidth="214.0" style="-fx-background-color: #ffffff;">
+    <Pane layoutX="671.0" layoutY="14.0" prefHeight="243.0" prefWidth="214.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="672.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
         <Label layoutX="14.0" layoutY="14.0" text="Add Process:" />
         <GridPane layoutX="15.0" layoutY="31.0" prefHeight="127.0" prefWidth="184.0">
             <columnConstraints>
@@ -70,14 +83,28 @@
         </GridPane>
       <Button fx:id="btnAddProcess" layoutX="160.0" layoutY="204.0" mnemonicParsing="false" onAction="#btnAddProcess_clicked" text="Add" />
     </Pane>
-    <Pane layoutX="14.0" layoutY="265.0" prefHeight="326.0" prefWidth="871.0" style="-fx-background-color: #FFFFFF;">
-        <ButtonBar layoutX="14.0" layoutY="286.0" prefHeight="40.0" prefWidth="847.0">
-            <buttons>
-                <Button fx:id="btnRun" mnemonicParsing="false" onAction="#btnRun_clicked" text="Run" />
-            </buttons>
-        </ButtonBar>
-      <Label layoutX="14.0" layoutY="6.0" text="Gantt Chart:" />
-      <Pane fx:id="pnGanttChart" layoutX="12.0" layoutY="20.0" prefHeight="50.0" prefWidth="847.0" />
-      <HBox fx:id="pnResult" layoutX="14.0" layoutY="86.0" prefHeight="200.0" prefWidth="847.0" />
-    </Pane>
+   <AnchorPane layoutX="-17.0" layoutY="257.0" prefHeight="326.0" prefWidth="871.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="260.0">
+      <children>
+         <Label text="Gantt Chart:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="0.0" />
+         <ScrollPane maxHeight="90.0" minHeight="70.0" prefHeight="90.0" style="-fx-background: #FFFFFF; -fx-border-color: #FFFFFF;" vbarPolicy="NEVER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+           <content>
+             <AnchorPane maxHeight="65.0" minHeight="60.0" minWidth="0.0" prefHeight="65.0">
+                  <children>
+                     <Pane fx:id="pnGanttChart" prefHeight="60.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                  </children>
+               </AnchorPane>
+           </content>
+         </ScrollPane>
+         <ScrollPane hbarPolicy="NEVER" prefWidth="600.0" style="-fx-background: #FFFFFF; -fx-border-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="110.0">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #FFFFFF;">
+                  <children>
+                     <HBox fx:id="pnResult" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+                  </children>
+               </AnchorPane>
+           </content>
+         </ScrollPane>
+             <Button fx:id="btnRun" mnemonicParsing="false" onAction="#btnRun_clicked" prefWidth="80.0" text="Run" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      </children>
+   </AnchorPane>
 </AnchorPane>
